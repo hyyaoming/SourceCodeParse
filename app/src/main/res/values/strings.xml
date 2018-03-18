@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">SourceCodeParse</string>
+    <string name="open_intent_service">开启服务</string>
+    <string name="Loader">Loader</string>
+    <string name="IntentService">IntentService</string>
+    <string name="TakePhoto">TakePhoto</string>
+    <string name="FileProvider">FileProvider</string>
+    <string name="design">design</string>
+    <string name="jump_activity_b">跳转至Bactivity</string>
+    <string name="jump_activity_a">跳转至AActivity</string>
+    <string name="activity_debug">activity相关测试</string>
+</resources>
