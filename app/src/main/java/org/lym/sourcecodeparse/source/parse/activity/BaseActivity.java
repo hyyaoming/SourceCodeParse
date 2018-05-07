@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.widget.Toast;
 
 /**
  * doc
@@ -32,6 +33,10 @@ public abstract class BaseActivity extends AppCompatActivity {
     private void initLog() {
         int size = ActivityManage.instance().getActivityStack().size();
         Log.d(TAG, "activity stack size：" + size);
+    }
+
+    protected void showToast(String content) {
+        Toast.makeText(this, content, Toast.LENGTH_LONG).show();
     }
 
     protected abstract int getLayoutId();

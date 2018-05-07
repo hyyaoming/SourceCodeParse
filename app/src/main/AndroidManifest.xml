@@ -32,6 +32,15 @@
 
         <activity android:name=".source.parse.activity.ActivityA" />
         <activity android:name=".source.parse.activity.ActivityB" />
+        <activity android:name=".source.parse.startmodel.FirstActivity"
+
+            />
+        <activity
+            android:name=".source.parse.startmodel.SecondActivity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".source.parse.startmodel.LastActivity"
+            android:launchMode="singleTask" />
 
         <provider
             android:name="android.support.v4.content.FileProvider"
@@ -42,6 +51,10 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/private_path" />
         </provider>
+
+        <activity android:name=".source.parse.design.ShadowActivity" />
+        <activity android:name=".source.parse.eventparse.EventParseActivity" />
+        <activity android:name=".source.parse.anim.AnimActivity" />
     </application>
 
 </manifest>

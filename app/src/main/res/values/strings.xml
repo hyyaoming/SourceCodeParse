@@ -9,4 +9,17 @@
     <string name="jump_activity_b">跳转至Bactivity</string>
     <string name="jump_activity_a">跳转至AActivity</string>
     <string name="activity_debug">activity相关测试</string>
+    <string name="activityA">activityA</string>
+    <string name="activityB">activityB</string>
+    <string name="activityC">activityC</string>
+    <string name="activityModel">activity启动模式</string>
+    <string name="shadow">shadow</string>
+    <string name="event">事件分发</string>
+    <string name="anim">属性动画</string>
+    <string name="translation">平移</string>
+    <string name="rotation">旋转</string>
+    <string name="scale">缩放</string>
+    <string name="alpha">渐变</string>
+    <string name="anim_set">组合动画</string>
+    <string name="valueAnimator">valueAnimator</string>
 </resources>

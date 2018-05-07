@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- layer-list设置图层效果：每一个item是一张图层，从下往上叠放 -->
+
+    <!-- item前景层-->
+    <item
+        android:left="2dp"
+        android:top="2dp">
+        <shape>
+            <gradient
+                android:angle="45"
+                android:endColor="#66ffd87c"
+                android:startColor="#6696CDCD"
+                android:type="linear" />
+            <corners android:radius="10dp" />
+        </shape>
+    </item>
+    <!-- item预览层-->
+    <item
+        android:bottom="2dp"
+        android:right="2dp">
+        <shape>
+            <solid android:color="@android:color/white" />
+            <corners android:radius="10dp" />
+        </shape>
+    </item>
+</layer-list>

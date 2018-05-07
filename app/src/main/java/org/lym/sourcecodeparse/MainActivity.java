@@ -2,64 +2,37 @@ package org.lym.sourcecodeparse;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.SimpleCursorAdapter;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 
 import org.lym.sourcecodeparse.source.parse.activity.ActivityA;
+import org.lym.sourcecodeparse.source.parse.anim.AnimActivity;
 import org.lym.sourcecodeparse.source.parse.design.SuspensionActivity;
+import org.lym.sourcecodeparse.source.parse.eventparse.EventParseActivity;
 import org.lym.sourcecodeparse.source.parse.fileprovider.FileProviderActivity;
 import org.lym.sourcecodeparse.source.parse.intentservice.IntentServiceActivity;
 import org.lym.sourcecodeparse.source.parse.loader.LoaderActivity;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends AppCompatActivity {
 
-    private Button mBtnIntentService, mBtnLoader, mFileProvider, mBtnDesign, mBtnActivityBtn;
+    private static final Class[] sClazz = {IntentServiceActivity.class, LoaderActivity.class, FileProviderActivity.class, SuspensionActivity.class, ActivityA.class, EventParseActivity.class,
+            AnimActivity.class};
+    private static final String[] sClassName = {"IntentService", "Loader", "FileProvider", "design", "Activity", "EventParse", "Anim"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         bindView();
-        bindListener();
-    }
-
-    private void bindListener() {
-        mBtnIntentService.setOnClickListener(this);
-        mBtnLoader.setOnClickListener(this);
-        mFileProvider.setOnClickListener(this);
-        mBtnDesign.setOnClickListener(this);
-        mBtnActivityBtn.setOnClickListener(this);
     }
 
     private void bindView() {
-        mBtnIntentService = findViewById(R.id.btn_intent_service);
-        mBtnLoader = findViewById(R.id.btn_loader);
-        mFileProvider = findViewById(R.id.btn_fileProvider);
-        mBtnDesign = findViewById(R.id.btn_design);
-        mBtnActivityBtn = findViewById(R.id.btn_activity_debug);
+        RecyclerView mRvList = findViewById(R.id.rv_list);
+        LinearLayoutManager manager = new LinearLayoutManager(this);
+        manager.setOrientation(LinearLayoutManager.VERTICAL);
+        mRvList.setHasFixedSize(true);
+        mRvList.setLayoutManager(manager);
+        mRvList.setAdapter(new MyRvListAdapter(this, sClazz, sClassName));
     }
 
-    @Override
-    public void onClick(View view) {
-        switch (view.getId()) {
-            case R.id.btn_intent_service:
-                IntentServiceActivity.open(this);
-                break;
-            case R.id.btn_loader:
-                LoaderActivity.open(this);
-                break;
-            case R.id.btn_fileProvider:
-                FileProviderActivity.open(this);
-                break;
-            case R.id.btn_design:
-                SuspensionActivity.open(this);
-                break;
-            case R.id.btn_activity_debug:
-                ActivityA.open(this);
-                break;
-            default:
-                break;
-        }
-    }
 }
