@@ -2,14 +2,10 @@ package org.lym.sourcecodeparse.source.parse.anim;
 
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
-import android.animation.ValueAnimator;
-import android.app.AlertDialog;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
 
 import org.lym.sourcecodeparse.R;
 import org.lym.sourcecodeparse.source.parse.activity.BaseActivity;
@@ -21,8 +17,9 @@ import org.lym.sourcecodeparse.source.parse.activity.BaseActivity;
  * @since 2018/5/7
  */
 public class AnimActivity extends BaseActivity {
-    private TextView mBtn;
-    private RelativeLayout mRelayout;
+    private Button mBtn;
+    private MoneyNumberTextView mMoneyTv;
+    private PointView mPointView;
 
     @Override
     protected void startTask() {
@@ -45,29 +42,36 @@ public class AnimActivity extends BaseActivity {
         int id = item.getItemId();
         switch (id) {
             case R.id.translation:
-                AnimatorSet set = new AnimatorSet();
-                ObjectAnimator animator = ObjectAnimator.ofFloat(mBtn, "translationY", 0, mRelayout.getHeight()+10);
-                ObjectAnimator aleObjectAnimator = ObjectAnimator.ofFloat(mBtn, "alpha", 0f, 1f);
-                set.play(animator).with(aleObjectAnimator);
-                set.setDuration(1000);
-                set.start();
+                ObjectAnimator translationAnim = ObjectAnimator.ofFloat(mBtn, "translationY", 0, 150, 0);
+                translationAnim.setDuration(1000);
+                translationAnim.start();
                 break;
             case R.id.scale:
-                AnimatorSet set1 = new AnimatorSet();
-                ObjectAnimator animator1 = ObjectAnimator.ofFloat(mBtn, "translationY", mRelayout.getHeight()+10, 1);
-                ObjectAnimator aleObjectAnimator1 = ObjectAnimator.ofFloat(mBtn, "alpha", 1f, 0f);
-                set1.play(animator1).with(aleObjectAnimator1);
-                set1.setDuration(1000);
-                set1.start();
+                AnimatorSet set = new AnimatorSet();
+                ObjectAnimator scaleAnimX = ObjectAnimator.ofFloat(mBtn, "scaleX", 1f, 0f, 1f);
+                ObjectAnimator scaleAnimY = ObjectAnimator.ofFloat(mBtn, "scaleY", 1f, 0f, 1f);
+                set.setDuration(1000);
+                set.play(scaleAnimX).with(scaleAnimY);
+                set.start();
                 break;
             case R.id.alpha:
-                showToast("渐变动画");
+                ObjectAnimator alphaAnim = ObjectAnimator.ofFloat(mBtn, "alpha", 0f, 1f);
+                alphaAnim.setDuration(1000);
+                alphaAnim.start();
                 break;
             case R.id.rotation:
-                showToast("旋转动画");
+                ObjectAnimator rotationAnim = ObjectAnimator.ofFloat(mBtn, "rotation", 0f, 360f);
+                rotationAnim.setDuration(1000);
+                rotationAnim.start();
                 break;
             case R.id.anim_set:
-                showToast("组合动画");
+                AnimatorSet animSet = new AnimatorSet();
+                ObjectAnimator translationX = ObjectAnimator.ofFloat(mBtn, "translationX", 0, 150);
+                ObjectAnimator translationY = ObjectAnimator.ofFloat(mBtn, "translationY", 0, 150);
+                ObjectAnimator rotation = ObjectAnimator.ofFloat(mBtn, "rotation", 0f, 360f);
+                animSet.setDuration(2000);
+                animSet.play(translationX).with(translationY).with(rotation);
+                animSet.start();
                 break;
             default:
                 break;
@@ -78,15 +82,22 @@ public class AnimActivity extends BaseActivity {
     @Override
     protected void initView() {
         mBtn = findViewById(R.id.btn_anim);
-        mRelayout = findViewById(R.id.re_layout);
+        mMoneyTv = findViewById(R.id.tv_money);
+        mPointView = findViewById(R.id.pointView);
     }
 
     @Override
     protected void bindListener() {
-        mBtn.setOnClickListener(new View.OnClickListener() {
+        mMoneyTv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                showToast("set valueAnimator");
+                mMoneyTv.showMoneyNumberAnim(2359.50f, MoneyNumberTextView.FLOATREGEX);
+            }
+        });
+        mPointView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mPointView.starAnim();
             }
         });
     }
