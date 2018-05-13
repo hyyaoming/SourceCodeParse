@@ -23,4 +23,5 @@
     <string name="anim_set">组合动画</string>
     <string name="valueAnimator">valueAnimator</string>
     <string name="moneyAnim">金额动画</string>
+    <string name="guess_you_like">-&#160;&#160;猜你喜欢&#160;&#160;-</string>
 </resources>

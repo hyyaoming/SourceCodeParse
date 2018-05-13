@@ -1,0 +1,47 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/liner_list_index"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:layout_alignParentRight="true"
+    android:layout_marginBottom="16dp"
+    android:layout_marginRight="16dp"
+    android:orientation="vertical"
+    android:visibility="gone">
+
+    <RelativeLayout
+        android:id="@+id/list_top_acion"
+        style="@style/wrap">
+
+        <!--商品位置 -->
+        <LinearLayout
+            android:id="@+id/layout_index_relay"
+            style="@style/wrap"
+            android:background="@mipmap/list_numb_press"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <TextView
+                android:id="@+id/tv_index_text"
+                style="@style/wrap"
+                android:gravity="center"
+                android:textColor="#4c4c4c"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tv_total_text"
+                style="@style/wrap"
+                android:gravity="center"
+                android:textColor="#4c4c4c"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <!--回到顶部-->
+        <ImageView
+            android:id="@+id/iv_list_top"
+            style="@style/wrap"
+            android:src="@mipmap/list_numb"
+            android:visibility="gone" />
+    </RelativeLayout>
+</LinearLayout>

@@ -12,12 +12,13 @@ import org.lym.sourcecodeparse.source.parse.eventparse.EventParseActivity;
 import org.lym.sourcecodeparse.source.parse.fileprovider.FileProviderActivity;
 import org.lym.sourcecodeparse.source.parse.intentservice.IntentServiceActivity;
 import org.lym.sourcecodeparse.source.parse.loader.LoaderActivity;
+import org.lym.sourcecodeparse.source.parse.recyclerview.MultipleActivity;
 
 public class MainActivity extends AppCompatActivity {
 
     private static final Class[] sClazz = {IntentServiceActivity.class, LoaderActivity.class, FileProviderActivity.class, SuspensionActivity.class, ActivityA.class, EventParseActivity.class,
-            AnimActivity.class};
-    private static final String[] sClassName = {"IntentService", "Loader", "FileProvider", "design", "Activity", "EventParse", "Anim"};
+            AnimActivity.class, MultipleActivity.class};
+    private static final String[] sClassName = {"IntentService", "Loader", "FileProvider", "design", "Activity", "EventParse", "Anim", "MultipleRecyclerView"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

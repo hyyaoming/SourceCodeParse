@@ -31,8 +31,7 @@ public class MyRvListAdapter extends RecyclerView.Adapter<MyRvListAdapter.MyView
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-
-        return new MyViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_rv_list_item, null));
+        return new MyViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_rv_list_item, parent,false));
     }
 
     @Override
