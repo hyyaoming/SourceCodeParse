@@ -10,15 +10,18 @@ import org.lym.sourcecodeparse.source.parse.anim.AnimActivity;
 import org.lym.sourcecodeparse.source.parse.design.SuspensionActivity;
 import org.lym.sourcecodeparse.source.parse.eventparse.EventParseActivity;
 import org.lym.sourcecodeparse.source.parse.fileprovider.FileProviderActivity;
+import org.lym.sourcecodeparse.source.parse.fragment.TabActivity;
 import org.lym.sourcecodeparse.source.parse.intentservice.IntentServiceActivity;
 import org.lym.sourcecodeparse.source.parse.loader.LoaderActivity;
 import org.lym.sourcecodeparse.source.parse.recyclerview.MultipleActivity;
+import org.lym.sourcecodeparse.source.parse.screenshot.ScreenshotActivity;
 
 public class MainActivity extends AppCompatActivity {
 
     private static final Class[] sClazz = {IntentServiceActivity.class, LoaderActivity.class, FileProviderActivity.class, SuspensionActivity.class, ActivityA.class, EventParseActivity.class,
-            AnimActivity.class, MultipleActivity.class};
-    private static final String[] sClassName = {"IntentService", "Loader", "FileProvider", "design", "Activity", "EventParse", "Anim", "MultipleRecyclerView"};
+            AnimActivity.class, MultipleActivity.class, TabActivity.class, ScreenshotActivity.class};
+    private static final String[] sClassName = {"IntentService", "Loader", "FileProvider", "design", "Activity", "EventParse", "Anim", "MultipleRecyclerView",
+            "TabActivity", "ScreenshotActivity"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

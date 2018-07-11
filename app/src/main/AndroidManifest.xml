@@ -57,6 +57,8 @@
         <activity android:name=".source.parse.eventparse.EventParseActivity" />
         <activity android:name=".source.parse.anim.AnimActivity" />
         <activity android:name=".source.parse.recyclerview.MultipleActivity" />
+        <activity android:name=".source.parse.screenshot.ScreenshotActivity"/>
+        <activity android:name=".source.parse.fragment.TabActivity"/>
     </application>
 
 </manifest>

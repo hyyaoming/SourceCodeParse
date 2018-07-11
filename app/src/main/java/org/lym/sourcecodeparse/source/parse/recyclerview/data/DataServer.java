@@ -56,6 +56,17 @@ public class DataServer {
         return list;
     }
 
+    public static List<String> getScreenList(){
+        List<String> list = new ArrayList<>();
+        list.add("截屏测试~~~~~~~~~~~~~~");
+        list.add("截屏测试~~~~~~~~~~~~~~");
+        list.add("截屏测试~~~~~~~~~~~~~~");
+        list.add("截屏测试~~~~~~~~~~~~~~");
+        list.add("截屏测试~~~~~~~~~~~~~~");
+        list.add("截屏测试~~~~~~~~~~~~~~");
+        return list;
+    }
+
     public static int getNewsListCount(List<MultipleItemEntity> list) {
         int count = 0;
         for (MultipleItemEntity entity : list) {

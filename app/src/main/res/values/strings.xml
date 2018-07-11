@@ -24,4 +24,5 @@
     <string name="valueAnimator">valueAnimator</string>
     <string name="moneyAnim">金额动画</string>
     <string name="guess_you_like">-&#160;&#160;猜你喜欢&#160;&#160;-</string>
+    <string name="convert_view">生成图片</string>
 </resources>
