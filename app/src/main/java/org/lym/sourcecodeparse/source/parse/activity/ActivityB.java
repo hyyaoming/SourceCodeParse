@@ -21,18 +21,6 @@ public class ActivityB extends BaseActivity {
     private Button mBtnJumpA;
 
     @Override
-    protected void startTask() {
-//        new Thread(new Runnable() {
-//            @Override
-//            public void run() {
-//                while (true) {
-//                    Log.d("Activity", "ActivityB Test");
-//                }
-//            }
-//        }).start();
-    }
-
-    @Override
     protected void onResume() {
         super.onResume();
         Log.d("Activity", "onResume");

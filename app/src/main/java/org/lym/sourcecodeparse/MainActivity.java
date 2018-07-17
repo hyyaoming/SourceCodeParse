@@ -8,6 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import org.lym.sourcecodeparse.source.parse.activity.ActivityA;
 import org.lym.sourcecodeparse.source.parse.anim.AnimActivity;
 import org.lym.sourcecodeparse.source.parse.design.SuspensionActivity;
+import org.lym.sourcecodeparse.source.parse.dialog.DialogActivity;
 import org.lym.sourcecodeparse.source.parse.eventparse.EventParseActivity;
 import org.lym.sourcecodeparse.source.parse.fileprovider.FileProviderActivity;
 import org.lym.sourcecodeparse.source.parse.fragment.TabActivity;
@@ -19,9 +20,9 @@ import org.lym.sourcecodeparse.source.parse.screenshot.ScreenshotActivity;
 public class MainActivity extends AppCompatActivity {
 
     private static final Class[] sClazz = {IntentServiceActivity.class, LoaderActivity.class, FileProviderActivity.class, SuspensionActivity.class, ActivityA.class, EventParseActivity.class,
-            AnimActivity.class, MultipleActivity.class, TabActivity.class, ScreenshotActivity.class};
+            AnimActivity.class, MultipleActivity.class, TabActivity.class, ScreenshotActivity.class, DialogActivity.class};
     private static final String[] sClassName = {"IntentService", "Loader", "FileProvider", "design", "Activity", "EventParse", "Anim", "MultipleRecyclerView",
-            "TabActivity", "ScreenshotActivity"};
+            "TabActivity", "ScreenshotActivity", "DialogActivity"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

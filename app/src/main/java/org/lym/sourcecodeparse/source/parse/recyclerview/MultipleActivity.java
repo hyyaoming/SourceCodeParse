@@ -42,11 +42,6 @@ public class MultipleActivity extends BaseActivity {
     private LinearLayout mLinearScrollTopIndex;
 
     @Override
-    protected void startTask() {
-
-    }
-
-    @Override
     protected int getLayoutId() {
         return R.layout.module_multiple_activity;
     }

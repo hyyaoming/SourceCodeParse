@@ -21,18 +21,6 @@ public class ActivityA extends BaseActivity {
     private Button mBtnJumpB;
 
     @Override
-    protected void startTask() {
-//        new Thread(new Runnable() {
-//            @Override
-//            public void run() {
-//                while (true) {
-//                    Log.d("Activity", "ActivityA Test");
-//                }
-//            }
-//        }).start();
-    }
-
-    @Override
     protected int getLayoutId() {
         return R.layout.module_activity_a;
     }

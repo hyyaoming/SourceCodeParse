@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
@@ -14,6 +15,7 @@ import android.provider.MediaStore;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.LruCache;
+import android.view.LayoutInflater;
 import android.view.View;
 
 import java.io.File;
@@ -30,10 +32,71 @@ import java.net.URL;
  */
 
 public class ConvertPicture {
+    /**
+     * layoutId转bttMap
+     *
+     * @param layoutId 布局资源文件
+     * @param context  上下文
+     */
+    public static Bitmap layoutConvertBitmap(int layoutId, Context context) {
+        View view = LayoutInflater.from(context).inflate(layoutId, null);
+        //这类可以对view里面的内容进行赋值操作
+        //这里有点需要注意，如果赋值操作有网络操作，那么只能等网络操作结束后才能进行转换工作
+        //由于这里只是一个布局资源文件，没有在页面上加载过，所以需要自行进行布局测量和绘制。
+        layoutView(view, context);
+        return viewConvertBitmapOne(view);
+    }
 
+    /**
+     * view转bitmap
+     *
+     * @param view 需要进行转换的bitmap
+     * @return 返回转换后的bitmap
+     */
+    public static Bitmap viewConvertBitmapTwo(View view) {
+        Bitmap bitmap = null;
+        if (null != view && view.getMeasuredWidth() != 0) {
+            view.setDrawingCacheEnabled(true);
+            view.buildDrawingCache();
+            bitmap = Bitmap.createBitmap(view.getDrawingCache(), 0, 0, view.getMeasuredWidth(), view.getMeasuredHeight());
+            view.destroyDrawingCache();
+        }
+        return bitmap;
+    }
+
+    /**
+     * View转bitmap
+     *
+     * @param view 需要转换的view
+     * @return 转换后的bitmap
+     */
+    public static Bitmap viewConvertBitmapOne(View view) {
+        if (view != null) {
+            Bitmap ret = Bitmap.createBitmap(view.getWidth(), view.getHeight(), Bitmap.Config.ARGB_8888);
+            Canvas canvas = new Canvas(ret);
+            Drawable bgDrawable = view.getBackground();
+            if (bgDrawable != null) {
+                bgDrawable.draw(canvas);
+            } else {
+                canvas.drawColor(Color.WHITE);
+            }
+            view.draw(canvas);
+            return ret;
+        }
+        return null;
+    }
+
+    /**
+     * 手动绘制布局，这里一般宽度测量模式设置为准确模式，大小为屏幕宽度
+     * 如果设置为未知模式会影响View当中的显示效果，转换后的bitmap效果不佳。
+     *
+     * @param view    需要测量的view
+     * @param context 上下文
+     */
     private static void layoutView(View view, Context context) {
         int width = context.getResources().getDisplayMetrics().widthPixels;
         view.layout(0, 0, width, 0);
+        //为了不影响view内容展示和bitmap显示效果，这里设置为精确模式，宽度为屏幕宽度
         int measuredWidth = View.MeasureSpec.makeMeasureSpec(width, View.MeasureSpec.EXACTLY);
         int measuredHeight = View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED);
         /* 当然，measure完后，并不会实际改变View的尺寸，需要调用View.layout方法去进行布局。

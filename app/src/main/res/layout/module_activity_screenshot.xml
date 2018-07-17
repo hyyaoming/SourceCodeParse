@@ -6,19 +6,25 @@
     android:orientation="vertical">
 
     <Button
-        android:id="@+id/btnConvertPicture"
+        android:id="@+id/btnLayoutConvertBitmap"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/convert_view" />
+        android:text="@string/layoutConvertBitmap"
+        android:textAllCaps="false" />
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+    <Button
+        android:id="@+id/btnViewConvertBitmap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/viewConvertBitmap"
+        android:textAllCaps="false" />
 
-        <ImageView
-            android:id="@+id/ivScreen"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:scaleType="centerCrop" />
-    </ScrollView>
+    <Button
+        android:id="@+id/btnListConvertBitmap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/listConvertBitmap"
+        android:textAllCaps="false" />
+
+
 </LinearLayout>

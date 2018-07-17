@@ -22,11 +22,6 @@ public class AnimActivity extends BaseActivity {
     private PointView mPointView;
 
     @Override
-    protected void startTask() {
-
-    }
-
-    @Override
     protected int getLayoutId() {
         return R.layout.module_activity_anim;
     }

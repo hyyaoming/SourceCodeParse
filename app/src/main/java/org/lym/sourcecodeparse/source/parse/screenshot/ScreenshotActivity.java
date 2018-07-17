@@ -1,5 +1,6 @@
 package org.lym.sourcecodeparse.source.parse.screenshot;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -18,12 +19,6 @@ import org.lym.sourcecodeparse.source.parse.recyclerview.data.DataServer;
  */
 
 public class ScreenshotActivity extends BaseActivity {
-    private ImageView mIvScreen;
-
-    @Override
-    protected void startTask() {
-
-    }
 
     @Override
     protected int getLayoutId() {
@@ -32,29 +27,35 @@ public class ScreenshotActivity extends BaseActivity {
 
     @Override
     protected void initView() {
-        Button mBtn = findViewById(R.id.btnConvertPicture);
-        mIvScreen = findViewById(R.id.ivScreen);
-        mBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                final Bitmap bitmap = ConvertPicture.shotRecyclerView(initPicture(), ScreenshotActivity.this);
-                mIvScreen.setImageBitmap(bitmap);
-            }
-        });
     }
 
-    private RecyclerView initPicture() {
-        RecyclerView mRv = (RecyclerView) getLayoutInflater().inflate(R.layout.layout_convert_rv, null);
-        mRv.setHasFixedSize(true);
-        GridLayoutManager manager = new GridLayoutManager(this, 2);
-        mRv.setLayoutManager(manager);
-        ScreenAdapter adapter = new ScreenAdapter(R.layout.screen_rv_item, DataServer.getScreenList());
-        mRv.setAdapter(adapter);
-        return mRv;
-    }
 
     @Override
     protected void bindListener() {
+        findViewById(R.id.btnLayoutConvertBitmap).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+        findViewById(R.id.btnLayoutConvertBitmap).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ScreenshotActivity.this,LayoutConvertBitmapActivity.class));
+            }
+        });
+        findViewById(R.id.btnViewConvertBitmap).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ScreenshotActivity.this,ViewConvertBitmapActivity.class));
+            }
+        });
+        findViewById(R.id.btnListConvertBitmap).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ScreenshotActivity.this,ListConvertBitmapActivity.class));
+            }
+        });
 
     }
 }

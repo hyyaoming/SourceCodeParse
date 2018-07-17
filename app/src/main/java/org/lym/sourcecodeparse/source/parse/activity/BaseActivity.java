@@ -30,7 +30,6 @@ public abstract class BaseActivity extends AppCompatActivity {
         initView();
         bindListener();
         initLog();
-        startTask();
         initStatusBar();
         changeStatusBarTextColor();
     }
@@ -80,8 +79,6 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected boolean enableStatusBar() {
         return true;
     }
-
-    protected abstract void startTask();
 
     private void initLog() {
         int size = ActivityManage.instance().getActivityStack().size();

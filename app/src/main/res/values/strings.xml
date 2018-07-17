@@ -24,5 +24,8 @@
     <string name="valueAnimator">valueAnimator</string>
     <string name="moneyAnim">金额动画</string>
     <string name="guess_you_like">-&#160;&#160;猜你喜欢&#160;&#160;-</string>
-    <string name="convert_view">生成图片</string>
+    <string name="layoutConvertBitmap">布局文件生成Bitmap</string>
+    <string name="viewConvertBitmap">View生成bitmap</string>
+    <string name="listConvertBitmap">列表生成bitmap</string>
+    <string name="showLoadingDialog">显示加载dialog</string>
 </resources>
