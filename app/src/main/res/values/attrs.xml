@@ -5,4 +5,54 @@
         <attr name="duration" format="integer" />
         <attr name="circle_background_color" format="color" />
     </declare-styleable>
+
+    <declare-styleable name="LoadingView">
+        <attr name="loading_view_size" format="dimension" />
+        <attr name="android:color" />
+    </declare-styleable>
+    <attr name="LoadingStyle" format="reference" />
+
+    <attr name="RoundButton" format="reference"/>
+
+
+    <attr name="qmui_backgroundColor" format="color"/>
+    <attr name="qmui_borderColor" format="color"/>
+    <attr name="qmui_borderWidth" format="dimension"/>
+    <!-- 圆角是否要自适应为 View 高度的一半 -->
+    <attr name="qmui_isRadiusAdjustBounds" format="boolean"/>
+    <!-- 同时指定四个方向的圆角大小 -->
+    <attr name="qmui_radius" format="dimension"/>
+    <!-- 指定左上方圆角的大小 -->
+    <attr name="qmui_radiusTopLeft" format="dimension"/>
+    <!-- 指定右上方圆角的大小 -->
+    <attr name="qmui_radiusTopRight" format="dimension"/>
+    <!-- 指定左下方圆角的大小 -->
+    <attr name="qmui_radiusBottomLeft" format="dimension"/>
+    <!-- 指定右下方圆角的大小 -->
+    <attr name="qmui_radiusBottomRight" format="dimension"/>
+
+
+    <declare-styleable name="RoundLinearLayout">
+        <attr name="qmui_backgroundColor"/>
+        <attr name="qmui_borderColor"/>
+        <attr name="qmui_borderWidth"/>
+        <attr name="qmui_isRadiusAdjustBounds"/>
+        <attr name="qmui_radius"/>
+        <attr name="qmui_radiusTopLeft"/>
+        <attr name="qmui_radiusTopRight"/>
+        <attr name="qmui_radiusBottomLeft"/>
+        <attr name="qmui_radiusBottomRight"/>
+    </declare-styleable>
+
+    <declare-styleable name="RoundButton">
+        <attr name="qmui_backgroundColor" />
+        <attr name="qmui_borderColor" />
+        <attr name="qmui_borderWidth" />
+        <attr name="qmui_isRadiusAdjustBounds" />
+        <attr name="qmui_radius" />
+        <attr name="qmui_radiusTopLeft" />
+        <attr name="qmui_radiusTopRight" />
+        <attr name="qmui_radiusBottomLeft" />
+        <attr name="qmui_radiusBottomRight" />
+    </declare-styleable>
 </resources>

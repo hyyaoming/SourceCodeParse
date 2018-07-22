@@ -52,6 +52,7 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/private_path" />
         </provider>
+
         <activity android:name=".source.parse.design.ShadowActivity" />
         <activity android:name=".source.parse.eventparse.EventParseActivity" />
         <activity android:name=".source.parse.anim.AnimActivity" />
@@ -62,6 +63,7 @@
         <activity android:name=".source.parse.screenshot.ListConvertBitmapActivity" />
         <activity android:name=".source.parse.fragment.TabActivity" />
         <activity android:name=".source.parse.dialog.DialogActivity" />
+        <activity android:name=".source.parse.rountdrawable.RoundLayoutActivity" />
     </application>
 
 </manifest>

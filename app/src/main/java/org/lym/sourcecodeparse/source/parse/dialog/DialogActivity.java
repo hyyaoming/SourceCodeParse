@@ -20,7 +20,10 @@ public class DialogActivity extends BaseActivity {
         findViewById(R.id.btnShowLoadingDialog).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                CustomProcessDialog.show(DialogActivity.this, "加载中...");
+                new TipDialog.Builder(DialogActivity.this)
+                        .setTipWord("正在加载")
+                        .setIconType(TipDialog.Builder.ICON_TYPE_LOADING)
+                        .create().show();
             }
         });
     }

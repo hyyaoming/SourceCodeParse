@@ -15,14 +15,15 @@ import org.lym.sourcecodeparse.source.parse.fragment.TabActivity;
 import org.lym.sourcecodeparse.source.parse.intentservice.IntentServiceActivity;
 import org.lym.sourcecodeparse.source.parse.loader.LoaderActivity;
 import org.lym.sourcecodeparse.source.parse.recyclerview.MultipleActivity;
+import org.lym.sourcecodeparse.source.parse.rountdrawable.RoundLayoutActivity;
 import org.lym.sourcecodeparse.source.parse.screenshot.ScreenshotActivity;
 
 public class MainActivity extends AppCompatActivity {
 
     private static final Class[] sClazz = {IntentServiceActivity.class, LoaderActivity.class, FileProviderActivity.class, SuspensionActivity.class, ActivityA.class, EventParseActivity.class,
-            AnimActivity.class, MultipleActivity.class, TabActivity.class, ScreenshotActivity.class, DialogActivity.class};
+            AnimActivity.class, MultipleActivity.class, TabActivity.class, ScreenshotActivity.class, DialogActivity.class, RoundLayoutActivity.class};
     private static final String[] sClassName = {"IntentService", "Loader", "FileProvider", "design", "Activity", "EventParse", "Anim", "MultipleRecyclerView",
-            "TabActivity", "ScreenshotActivity", "DialogActivity"};
+            "TabActivity", "ScreenshotActivity", "DialogActivity", "RoundLayoutActivity"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -6,4 +6,5 @@
     <color name="default_shadow_color">#88757575</color>
     <color name="default_fill_color">#ffffff</color>
     <color name="shadow">#AA000000</color>
+    <color name="little_black">#C0000000</color>
 </resources>
