@@ -1,41 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="10dp">
+    android:orientation="vertical">
+
+    <org.lym.sourcecodeparse.source.parse.rountdrawable.RoundButton
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_margin="10dp"
+        app:qmui_backgroundColor="@android:color/white"
+        app:qmui_borderColor="@color/material_green"
+        app:qmui_borderWidth="1dp"
+        app:qmui_radius="10dp" />
 
     <org.lym.sourcecodeparse.source.parse.rountdrawable.RoundLinearLayout
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        app:qmui_borderColor="@android:color/black"
-        app:qmui_borderWidth="0.5dp"
-        app:qmui_radius="10dp">
+        android:layout_height="50dp"
+        android:layout_margin="10dp"
+        android:orientation="horizontal"
+        app:qmui_borderColor="@color/material_green"
+        app:qmui_borderWidth="1dp">
 
         <TextView
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:layout_margin="10dp"
-            android:text="哈哈哈哈" />
+            android:layout_weight="1" />
 
         <TextView
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:text="哈哈哈哈" />
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:text="哈哈哈哈" />
-
+            android:layout_weight="1" />
 
     </org.lym.sourcecodeparse.source.parse.rountdrawable.RoundLinearLayout>
 
+    <org.lym.sourcecodeparse.source.parse.rountdrawable.RoundRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_margin="10dp"
+        app:qmui_borderColor="@color/cardview_shadow_end_color"
+        app:qmui_borderWidth="1dp" />
 
-</RelativeLayout>
+    <org.lym.sourcecodeparse.source.parse.rountdrawable.RoundFrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_margin="10dp"
+        app:qmui_borderColor="@color/colorPrimary"
+        app:qmui_borderWidth="1dp" />
+
+</LinearLayout>
