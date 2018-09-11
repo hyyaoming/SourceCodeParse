@@ -38,7 +38,7 @@ public class NewsModel implements MultipleItemEntity {
 
     @Override
     public int getSpanCount() {
-        return 4;
+        return 2;
     }
 
     @Override
